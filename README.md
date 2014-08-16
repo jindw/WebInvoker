@@ -16,34 +16,31 @@ Android方案不多说，很多办法， 我推荐自定义 android prompt 接�
 
 IOS 关键代码：
 
-@implementation InvokeURLProtocel{
-}
-+ (NSURLRequest*) canonicalRequestForRequest:(NSURLRequest *)req{
-    return req;
-}
-- (void)startLoading
-{
-    NSURL *url = self.request.URL;
-    NSString *object = url.user;
-    NSString *method = url.password;
-    //NSLog(@"%@",url.host);
-    NSString *arguments= url.host;
-    
-
-    NSData* jsonData = [XIdeaWebInterface.instance invoke:object methodName:method arguments:arguments];
-    //TODO: 调用协议
-    NSURLResponse *response = [[NSURLResponse alloc] initWithURL:[self.request URL] MIMEType:@"text/plain" expectedContentLength:[jsonData length] textEncodingName:nil];
-    [[self client] URLProtocol: self didReceiveResponse:response cacheStoragePolicy:NSURLCacheStorageNotAllowed];
-    [[self client] URLProtocol:self didLoadData:jsonData];
-    [[self client] URLProtocolDidFinishLoading:self];
-}
-- (void)stopLoading
-{
-}
-+ (BOOL)canInitWithRequest:(NSURLRequest *)request{
-	return [request.URL.scheme  isEqualToString:@"js-invoke"] ;
-}
-@end
+	@implementation InvokeURLProtocel
+	+ (NSURLRequest*) canonicalRequestForRequest:(NSURLRequest *)req{
+	    return req;
+	}
+	- (void)startLoading
+	{
+	    NSURL *url = self.request.URL;
+	    NSString *object = url.user;
+	    NSString *method = url.password;
+	    //NSLog(@"%@",url.host);
+	    NSString *arguments= url.host;
+	    NSData* jsonData = [XIdeaWebInterface.instance invoke:object methodName:method arguments:arguments];
+	    //TODO: 调用协议
+	    NSURLResponse *response = [[NSURLResponse alloc] initWithURL:[self.request URL] MIMEType:@"text/plain" 	expectedContentLength:[jsonData length] textEncodingName:nil];
+	   [[self client] URLProtocol: self didReceiveResponse:response cacheStoragePolicy:NSURLCacheStorageNotAllowed];
+	    [[self client] URLProtocol:self didLoadData:jsonData];
+	    [[self client] URLProtocolDidFinishLoading:self];
+	}
+	- (void)stopLoading
+	{
+	}
+	+ (BOOL)canInitWithRequest:(NSURLRequest *)request{
+		return [request.URL.scheme  isEqualToString:@"js-invoke"] ;
+	}
+	@end
 
 
 **IOS 对应测试代码** 
