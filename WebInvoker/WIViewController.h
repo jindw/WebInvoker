@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface WIViewController : UIViewController
+@interface WIViewController : UIViewController <UIWebViewDelegate>
+
+@property (nonatomic, retain) IBOutlet UIWebView* webView;
 
 @end

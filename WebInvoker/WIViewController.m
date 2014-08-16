@@ -7,6 +7,7 @@
 //
 
 #import "WIViewController.h"
+#import "XIdeaWebInterface.h"
 
 @interface WIViewController ()
 
@@ -18,12 +19,18 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    [XIdeaWebInterface.instance registor:@"object" object:self];
+    
+    self.webView  = [[UIWebView alloc] initWithFrame:CGRectMake(0, 20, 320, 460)];
+    [self.view addSubview: self.webView];
+    NSURL *url = [ [[NSBundle mainBundle] bundleURL] URLByAppendingPathComponent:@"test.html"];
+	[self.webView loadRequest:[NSURLRequest requestWithURL:url]];
 }
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (NSString *) method:(NSArray*)arguments{
+    return [NSString stringWithFormat :@"arguments:%@" ,arguments];
+}
+- (NSString *) method:(NSNumber*)a p1:(NSString*) p1{
+    return [NSString stringWithFormat :@"arguments:%d,%@" ,[a intValue],p1];
 }
 
 @end

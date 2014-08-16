@@ -1,0 +1,36 @@
+<html>
+	<head>
+        <meta http-equiv='content-type' content='text/html;charset=utf-8'>
+        <title>Test invoke</title>
+        
+		<script type="text/javascript">
+            function callNativeMethod(objectName,methodName,args){
+                var xhr = new  XMLHttpRequest();
+                xhr.open("GET", "js-invoke://"+objectName+":"+methodName+"@"+encodeURIComponent(JSON.stringify(args)),false);
+                xhr.send("");
+                //alert(xhr.responseText)
+                var rtv = JSON.parse(xhr.responseText);
+                if(rtv.error){
+                    alert(rtv.error)
+                    throw new Error(rtv.error);
+                }else{
+                    return rtv.result;
+                }
+            }
+        
+            prompt("result:",callNativeMethod("object","method",[1,2,3,"asas中文sds",4]))//rtv 即为 object c 返回的代码
+            </script>
+
+	</head>
+	
+	<body style="border:3px solid blue;">
+        
+        <h2>Hello World!!</h2>
+        <ul>
+            <li onclick='prompt("result:",callNativeMethod("object","method",[]))'>invoke method no args</li>
+            <li onclick='prompt("result:",callNativeMethod("object","method",[1]))'>invoke method with 1 args</li>
+            <li onclick='prompt("result:",callNativeMethod("object","method",[1,"2"]))'>invoke method with 2 args</li>
+        </ul>
+	</body>
+	
+</html>

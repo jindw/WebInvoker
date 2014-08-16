@@ -22,6 +22,9 @@
 		89F103C0199FFD8F0020BB03 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89F1039F199FFD8E0020BB03 /* UIKit.framework */; };
 		89F103C8199FFD8F0020BB03 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 89F103C6199FFD8F0020BB03 /* InfoPlist.strings */; };
 		89F103CA199FFD8F0020BB03 /* WebInvokerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 89F103C9199FFD8F0020BB03 /* WebInvokerTests.m */; };
+		89F103D6199FFE560020BB03 /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = 89F103D4199FFE560020BB03 /* index.html */; };
+		89F103D7199FFE560020BB03 /* test.html in Resources */ = {isa = PBXBuildFile; fileRef = 89F103D5199FFE560020BB03 /* test.html */; };
+		89F103DA199FFEA60020BB03 /* XIdeaWebInterface.m in Sources */ = {isa = PBXBuildFile; fileRef = 89F103D9199FFEA60020BB03 /* XIdeaWebInterface.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +58,10 @@
 		89F103C5199FFD8F0020BB03 /* WebInvokerTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "WebInvokerTests-Info.plist"; sourceTree = "<group>"; };
 		89F103C7199FFD8F0020BB03 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		89F103C9199FFD8F0020BB03 /* WebInvokerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WebInvokerTests.m; sourceTree = "<group>"; };
+		89F103D4199FFE560020BB03 /* index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
+		89F103D5199FFE560020BB03 /* test.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = test.html; sourceTree = "<group>"; };
+		89F103D8199FFEA60020BB03 /* XIdeaWebInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XIdeaWebInterface.h; sourceTree = "<group>"; };
+		89F103D9199FFEA60020BB03 /* XIdeaWebInterface.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XIdeaWebInterface.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +121,9 @@
 		89F103A1199FFD8E0020BB03 /* WebInvoker */ = {
 			isa = PBXGroup;
 			children = (
+				89F103D8199FFEA60020BB03 /* XIdeaWebInterface.h */,
+				89F103D9199FFEA60020BB03 /* XIdeaWebInterface.m */,
+				89F103D3199FFE560020BB03 /* html */,
 				89F103AA199FFD8E0020BB03 /* WIAppDelegate.h */,
 				89F103AB199FFD8E0020BB03 /* WIAppDelegate.m */,
 				89F103AD199FFD8E0020BB03 /* Main_iPhone.storyboard */,
@@ -153,6 +163,15 @@
 				89F103C6199FFD8F0020BB03 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		89F103D3199FFE560020BB03 /* html */ = {
+			isa = PBXGroup;
+			children = (
+				89F103D4199FFE560020BB03 /* index.html */,
+				89F103D5199FFE560020BB03 /* test.html */,
+			);
+			path = html;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -232,7 +251,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				89F103D6199FFE560020BB03 /* index.html in Resources */,
 				89F103B2199FFD8E0020BB03 /* Main_iPad.storyboard in Resources */,
+				89F103D7199FFE560020BB03 /* test.html in Resources */,
 				89F103B7199FFD8E0020BB03 /* Images.xcassets in Resources */,
 				89F103AF199FFD8E0020BB03 /* Main_iPhone.storyboard in Resources */,
 				89F103A6199FFD8E0020BB03 /* InfoPlist.strings in Resources */,
@@ -254,6 +275,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				89F103DA199FFEA60020BB03 /* XIdeaWebInterface.m in Sources */,
 				89F103B5199FFD8E0020BB03 /* WIViewController.m in Sources */,
 				89F103AC199FFD8E0020BB03 /* WIAppDelegate.m in Sources */,
 				89F103A8199FFD8E0020BB03 /* main.m in Sources */,
